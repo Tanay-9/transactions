@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { balance } from "../store";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 export const Topbar = ({ change }) => {
   const { setData, data } = balance();
 
@@ -10,7 +11,7 @@ export const Topbar = ({ change }) => {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          "http://localhost:3000/api/v1/account/balance",
+          `${BACKEND_URL}/api/v1/account/balance`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

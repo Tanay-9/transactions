@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import {Shimmer} from "./Shimmer";
 import { loadingStore } from "../store";
 import { toast } from "react-toastify";
+import { BACKEND_URL } from "../config";
+
 export const Users = () => {
   const { isLoading, setLoading } = loadingStore();
   const navigate = useNavigate();
@@ -19,7 +21,7 @@ export const Users = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `http://localhost:3000/api/v1/user/bulk?filter=${filter}`,
+        `${BACKEND_URL}/api/v1/user/bulk?filter=${filter}`,
         {
           headers: {
             Authorization: "Bearer " + token,

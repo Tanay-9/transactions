@@ -2,7 +2,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
-
+import { BACKEND_URL } from "../config";
 export const SendMoney = () => {
   const [params] = useSearchParams();
   const id = params.get("to");
@@ -42,7 +42,7 @@ export const SendMoney = () => {
                   const token = localStorage.getItem("token");
                   try {
                     await axios.post(
-                      "http://localhost:3000/api/v1/account/transfer",
+                      `${BACKEND_URL}/api/v1/account/transfer`,
                       { to: id, amount },
                       { headers: { Authorization: `Bearer ${token}` } }
                     );

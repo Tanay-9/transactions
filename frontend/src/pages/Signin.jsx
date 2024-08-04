@@ -9,13 +9,14 @@ import {
 import axios from "axios";
 import {  useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { BACKEND_URL } from "../config";
 export const Signin = () => {
     const navigate = useNavigate();
 
 
     const handleSignIn = async () => {
       try {
-          const res = await axios.post('http://localhost:3000/api/v1/user/signin', {
+          const res = await axios.post(`${BACKEND_URL}/api/v1/user/signin`, {
               username, 
               password
           });
