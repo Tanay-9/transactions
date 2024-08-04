@@ -1,0 +1,54 @@
+/* styles/toast-custom.css */
+.Toastify__toast-container {
+    position: fixed; /* Ensure it's in the correct position */
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 9999; /* Ensure it appears above other content */
+  }
+  
+  .Toastify__toast {
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for a glossy effect */
+    backdrop-filter: blur(5px); /* Glass-like blur effect */
+    padding: 10px 20px; /* Padding */
+    max-width: 400px; /* Set a max width for the toast */
+    margin: 0 10px; /* Margin to avoid edge collision */
+    font-size: 14px; /* Adjust text size */
+  }
+  
+  .Toastify__toast-body {
+    display: flex;
+    align-items: center; /* Center content vertically */
+  }
+  
+  .Toastify__toast--success {
+    background: rgba(76, 175, 80, 0.9); /* Subtle green background for success */
+    color: white; /* Text color */
+  }
+  
+  .Toastify__toast--error {
+    background: rgba(244, 67, 54, 0.9); /* Subtle red background for error */
+    color: white; /* Text color */
+  }
+  
+  .Toastify__toast--info {
+    background: rgba(33, 150, 243, 0.9); /* Subtle blue background for info */
+    color: white; /* Text color */
+  }
+  
+  .Toastify__toast--warning {
+    background: rgba(255, 193, 7, 0.9); /* Subtle yellow background for warning */
+    color: black; /* Text color */
+  }
+  
+  .Toastify__close-button {
+    color: white; /* Close button color */
+    font-size: 16px; /* Close button size */
+    margin-left: 10px; /* Space between text and button */
+  }
+  
+  .Toastify__close-button:hover {
+    color: rgba(0, 0, 0, 0.8); /* Hover color for the close button */
+  }
+  
